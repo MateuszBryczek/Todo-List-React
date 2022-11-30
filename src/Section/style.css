@@ -1,4 +1,4 @@
-.main{
+.container{
     max-width: 900px;
     padding: 20px;
     margin: 0px auto;
@@ -15,4 +15,13 @@
 .section__header{
     padding:10px;
     margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media(max-width:767px){
+    .section__header{
+        flex-direction: column;
+    }
 }
