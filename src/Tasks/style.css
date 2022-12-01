@@ -5,11 +5,15 @@
     padding: 10px;
     flex-direction: column;
     gap: 10px;
-    border-bottom: 1px solid lightgrey;
 }
 
 .tasks__content--done{
     text-decoration: line-through;
+}
+
+.tasks__item{
+    border-bottom: 1px solid lightgrey;
+    padding: 5px;
 }
 
 .tasks__item--hiden {
