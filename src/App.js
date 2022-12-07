@@ -14,11 +14,20 @@ function App() {
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
-  }
+  };
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
   };
+
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.concat.map(task => {
+      if(task.id === id) {
+        return {...task, done: !task.done};
+      }
+        return task;
+    }));
+  }
 
   return ( 
       <Container className="main__container">
@@ -31,13 +40,16 @@ function App() {
           body={
           <Tasks tasks={tasks} 
           hideDone={hideDone} 
-          removeTask={removeTask}/>
+          removeTask={removeTask}
+          toggleTaskDone={toggleTaskDone}
+          />
         }
           extraHeaderContent={
           <Buttons 
           tasks={tasks} 
           hideDone={hideDone} 
-          toggleHideDone={toggleHideDone}/>
+          toggleHideDone={toggleHideDone}
+          />
         }
           />
       </Container>
