@@ -20,7 +20,7 @@ export const TasksItem = styled.li`
 
 export const TasksContent =  styled.span`
     ${({done}) => done && css`
-    text-decoration: line-through;
+        text-decoration: line-through;
     `}
 `;
 
@@ -30,19 +30,19 @@ export const TasksButton = styled.button`
     margin-left: 10px;
     margin-right: 10px;
     border: none;
-    color: white;
     text-align: center;
+    color: white;
     transition: 0.5s;
 
     ${({toggleDone}) => toggleDone && css`
         background-color: green;
 
         &:hover{
-            background-color: rgb(0, 140, 0);
+            filter: brightness(115%);
         }
 
         &:active{
-            background-color: rgb(0, 160, 0);
+            filter: brightness(130%);
         }
     `}
 
@@ -51,11 +51,11 @@ export const TasksButton = styled.button`
         float: right;
 
         &:hover{
-            background-color: rgb(255, 40, 40);
+            filter: brightness(115%);
         }
 
         &:active{
-            background-color: rgb(255, 70, 70);
+            filter: brightness(130%);
         }
     `}
 `;
