@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react';
-import styled from "styled-components";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -57,8 +56,6 @@ function App() {
         },
       ]);
     };
-
-
 
   return ( 
       <Container className="main__container">
