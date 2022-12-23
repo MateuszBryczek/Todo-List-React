@@ -13,24 +13,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Code fragment:
 ```javascript
-const Tasks = ({tasks, hideDoneTasks}) =>
-    <ul className="tasks">
+const Tasks = ({tasks, hideDone, removeTask, toggleTaskDone}) =>
+    <TasksList>
         {tasks.map(task => (
-            <li 
+            <TasksItem
             key={task.id}
-            className={`tasks__item ${task.done && hideDoneTasks ? " tasks__item--hiden" : ""}`}>
-                <button className="tasks__button tasks__button--toggleDone">
+            hidden={task.done && hideDone}
+            >
+                <TasksButton toggleDone
+                onClick={() => toggleTaskDone(task.id)}
+                >
                     {task.done ? "✔" : ""}
-                </button>
+                </TasksButton>
 
-                <span className={`tasks__content${ task.done ? " tasks__content--done" : ""}`}>
+                <TasksContent done={task.done}>
                     {task.content}
-                </span>
+                </TasksContent>
 
-                <button className="tasks__button tasks__button--remove">
+                <TasksButton remove
+                onClick={() => removeTask(task.id)}
+                >
                     🗑
-                </button>
-            </li>
+                </TasksButton>
+            </TasksItem>
+        ))}
+    </TasksList>
 ```
 ## Tools used:
 - HTML
@@ -39,6 +46,7 @@ const Tasks = ({tasks, hideDoneTasks}) =>
 - Normalize.css
 - Flexbox
 - React
+- Styled Components
 ### `npm start`
 
 Runs the app in the development mode.\
