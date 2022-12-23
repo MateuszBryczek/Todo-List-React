@@ -33,7 +33,8 @@ export const FormButton = styled.button`
 
     &:hover{
         filter: brightness(115%);
-        scale: 110%;   
+        scale: 110%;
+        cursor: pointer; 
 }
 
     &:active{

@@ -39,6 +39,7 @@ export const TasksButton = styled.button`
 
         &:hover{
             filter: brightness(115%);
+            cursor: pointer;
         }
 
         &:active{
