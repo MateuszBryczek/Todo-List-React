@@ -20,5 +20,3 @@ export const Button = styled.button`
         filter: brightness(130%)
     }
 `;
-
-export default Button;

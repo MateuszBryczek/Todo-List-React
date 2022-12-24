@@ -1,7 +1,7 @@
-import Button from "./styled"
+import { Button } from "./styled"
 
 const Buttons = ({tasks, hideDone, toggleHideDone, setAllDone}) => (
-    <div className="buttons">
+    <div>
         {tasks.length > 0 && (
             <>
                 <Button 
@@ -15,7 +15,7 @@ const Buttons = ({tasks, hideDone, toggleHideDone, setAllDone}) => (
                         disabled={tasks.every(({ done }) => done )}
                         >
                         Ukończ wszystkie
-                    </Button>
+                </Button>
             </> 
         )}
     </div>
