@@ -35,7 +35,7 @@ export const FormButton = styled.button`
         filter: brightness(115%);
         scale: 110%;
         cursor: pointer; 
-}
+    }
 
     &:active{
         filter: brightness(130%);

@@ -1,8 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from "./App"
 import reportWebVitals from './reportWebVitals';
+import {configureStore} from "@reduxjs/toolkit";
+
+const initialState = {
+  tasks:[],
+};
+
+const tasksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "addTask":
+    return {
+      ...state,
+      tasks: [
+        ...state.tasks,
+        {
+          content: action.payload
+        },
+      ]
+    };
+  }
+  return state;
+};
+
+const addTask = content => ({
+  type: "addTask",
+  payload: content,
+});
+
+const selectTasks = ({ tasks }) => tasks;
+
+const store = configureStore({ reducer: tasksReducer });
+console.log(selectTasks(store.getState()));
+
+store.dispatch(addTask("zadanie 1"));
+
+console.log(selectTasks(store.getState()));
+
+store.dispatch(addTask("zadanie 2"));
+
+console.log(selectTasks(store.getState()));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
