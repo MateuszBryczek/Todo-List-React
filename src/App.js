@@ -1,6 +1,5 @@
-import React from "react";
 import Tasks from "./features/tasks/Tasks";
 
-export const App = () => <Tasks />
+export const App = () => <Tasks />;
 
-export default () => <Tasks />
+export default App;
