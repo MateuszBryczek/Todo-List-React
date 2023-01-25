@@ -13,31 +13,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Code fragment:
 ```javascript
-const Tasks = ({tasks, hideDone, removeTask, toggleTaskDone}) =>
-    <TasksList>
-        {tasks.map(task => (
-            <TasksItem
-            key={task.id}
-            hidden={task.done && hideDone}
-            >
-                <TasksButton toggleDone
-                onClick={() => toggleTaskDone(task.id)}
-                >
-                    {task.done ? "✔" : ""}
-                </TasksButton>
-
-                <TasksContent done={task.done}>
-                    {task.content}
-                </TasksContent>
-
-                <TasksButton remove
-                onClick={() => removeTask(task.id)}
-                >
-                    🗑
-                </TasksButton>
-            </TasksItem>
-        ))}
-    </TasksList>
+        addTasks: ({tasks}, {payload: task}) => {
+            tasks.push(task);
+        },
+        toggleHideDone: state => {
+            state.hideDone = !state.hideDone;
+        },
+        toggleTaskDone: ({tasks}, {payload: taskId}) => {
+            const index = tasks.findIndex(({id}) => id === taskId);
+            tasks[index].done =!tasks[index].done;
+        },
+        removeTask: ({tasks}, {payload:taskId}) => {
+            const index = tasks.findIndex(({id}) => id === taskId);
+            tasks.splice(index, 1);
+        },
+        setAllDone: ({tasks}) => {
+            for (const task of tasks) {
+                task.done = true;
+            }
+        },
 ```
 ## Tools used:
 - HTML
