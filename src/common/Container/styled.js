@@ -4,8 +4,4 @@ export const MainContainer = styled.main`
     max-width: 900px;
     padding: 20px;
     margin: 0px auto;
-
-    &:hover{
-        cursor: pointer;
-    }
 `;

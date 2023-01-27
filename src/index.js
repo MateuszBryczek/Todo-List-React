@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import React from 'react';
 import App from "./App"
 import { Provider } from 'react-redux';
+import { GlobalStyle } from './styled';
 import reportWebVitals from './reportWebVitals';
 import store from "./store";
 
@@ -9,7 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <GlobalStyle />
+        <App />
     </Provider>
   </React.StrictMode>
 );
