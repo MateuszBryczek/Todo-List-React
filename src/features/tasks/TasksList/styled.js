@@ -3,15 +3,15 @@ import styled, { css } from "styled-components";
 export const List = styled.ul`
     list-style: none;
     font-size: 125%;
-    display: flex;
     padding: 10px;
-    flex-direction: column;
     gap: 10px;
 `;
 
 export const TasksItem = styled.li`
     border-bottom: 1px solid lightgrey;
     padding: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
 
     ${({hidden}) => hidden && css`
         display: none;
@@ -33,11 +33,8 @@ export const TasksButton = styled.button`
     text-align: center;
     color: white;
     transition: 0.5s;
-
-    ${({toggleDone}) => toggleDone && css`
-        background-color: green;
-
-        &:hover{
+    
+    &:hover{
             filter: brightness(115%);
             cursor: pointer;
         }
@@ -45,18 +42,12 @@ export const TasksButton = styled.button`
         &:active{
             filter: brightness(130%);
         }
+
+    ${({toggleDone}) => toggleDone && css`
+        background-color: green;
     `}
 
     ${({remove}) => remove && css`
         background-color: red;
-        float: right;
-
-        &:hover{
-            filter: brightness(115%);
-        }
-
-        &:active{
-            filter: brightness(130%);
-        }
     `}
 `;
