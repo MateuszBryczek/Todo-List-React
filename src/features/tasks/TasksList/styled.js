@@ -10,6 +10,8 @@ export const List = styled.ul`
 export const TasksItem = styled.li`
     border-bottom: 1px solid lightgrey;
     padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: grid;
     grid-template-columns: auto 1fr auto;
 
