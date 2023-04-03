@@ -11,12 +11,6 @@ export const StyledForm = styled.form`
     }
 `;
 
-export const FormInput = styled.input`
-    padding:10px;
-    border: 1px solid lightgray; 
-    width: 100%;
-`;
-
 export const FormButton = styled.button`
     padding: 10px;
     background-color: rgb(0, 130, 130);
