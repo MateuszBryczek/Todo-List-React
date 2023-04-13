@@ -18,9 +18,6 @@ const Buttons = () => {
 
     return (
         <div>
-            <Button onClick={() => dispatch(fetchExampleTasks())}>
-                Pobierz przykładowe zadania
-            </Button>
             {!areTasksEmpty && (
                 <>
                     <Button

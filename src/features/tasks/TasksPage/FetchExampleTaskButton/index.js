@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchExampleTasks, selectLoading } from "../../tasksSlice";
 import Button from "../Button";
 
-export default () => {
+const FetchExampleTasksButton = () => {
     const dispatch = useDispatch();
     const loading = useSelector(selectLoading);
 
     return (
-        <Button disabled={loading} onClick={() => dispatch(fetchExampleTasks())}>
+        <Button 
+            disabled={loading} 
+            onClick={() => dispatch(fetchExampleTasks())}>
             {
                 loading
                     ? "Ładowanie..."
@@ -16,3 +18,5 @@ export default () => {
         </Button>
     );
 };
+
+export default FetchExampleTasksButton;

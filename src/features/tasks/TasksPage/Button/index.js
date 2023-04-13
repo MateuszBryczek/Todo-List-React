@@ -14,6 +14,7 @@ export default styled.button`
 
     &:hover {
         filter: brightness(115%);
+        cursor: pointer; 
     }
 
     &:active {
