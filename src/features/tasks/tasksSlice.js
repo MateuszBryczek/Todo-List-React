@@ -69,8 +69,8 @@ export const getTaskById = (state, taskId) =>
             return tasks;
         }
         
-        return tasks.filter(({contente}) => 
-        contente.toUpperCase().includes(query.trim().toUpperCase()));
+        return tasks.filter(({content}) => 
+        content.toUpperCase().includes(query.trim().toUpperCase()));
     }
 
 export default tasksSlice.reducer;
