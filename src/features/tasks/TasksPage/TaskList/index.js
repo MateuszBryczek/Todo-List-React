@@ -19,8 +19,9 @@ const TasksList = () => {
             key={task.id}
             hidden={task.done && hideDone}
             >
-                <TasksButton toggleDone
-                onClick={() => dispatch(toggleTaskDone(task.id))}
+                <TasksButton 
+                    toggleDone
+                    onClick={() => dispatch(toggleTaskDone(task.id))}
                 >
                     {task.done ? "✔" : ""}
                 </TasksButton>

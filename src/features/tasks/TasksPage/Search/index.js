@@ -22,7 +22,7 @@ const Search = () => {
             onChange={onInputChange}
         />
         </Wrapper>
-    );
+    )
 };
 
 export default Search;
