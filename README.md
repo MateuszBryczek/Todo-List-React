@@ -7,7 +7,7 @@ Website have default polish language.
 
 You can input your tasks and toggle them as done or delete them.
 
-Try it by yourself: >>https://mateuszbryczek.github.io/todo-list-react/<<
+Try it by yourself: >>https://MateuszBryczek.github.io/todo-list-react/<<
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
